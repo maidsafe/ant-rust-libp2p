@@ -28,7 +28,7 @@ use futures::{
     future::{poll_fn, Either, Future},
     SinkExt, StreamExt,
 };
-use libp2p_core::muxing::StreamMuxerBox;
+use ant_libp2p_core::muxing::StreamMuxerBox;
 
 use super::concurrent_dial::ConcurrentDial;
 use crate::{
@@ -108,7 +108,7 @@ pub(crate) async fn new_for_pending_outgoing_connection(
         }
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        Either::Left((Ok(v), _)) => libp2p_core::util::unreachable(v),
+        Either::Left((Ok(v), _)) => ant_libp2p_core::util::unreachable(v),
         Either::Right((Ok((address, output, errors)), _)) => {
             let _ = events
                 .send(PendingConnectionEvent::ConnectionEstablished {
@@ -148,7 +148,7 @@ pub(crate) async fn new_for_pending_incoming_connection<TFut>(
         }
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        Either::Left((Ok(v), _)) => libp2p_core::util::unreachable(v),
+        Either::Left((Ok(v), _)) => ant_libp2p_core::util::unreachable(v),
         Either::Right((Ok(output), _)) => {
             let _ = events
                 .send(PendingConnectionEvent::ConnectionEstablished {

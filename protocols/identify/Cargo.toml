@@ -1,12 +1,12 @@
 [package]
-name = "libp2p-identify"
+name = "ant-libp2p-identify"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Nodes identification protocol for libp2p"
 version = "0.46.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
@@ -15,8 +15,8 @@ asynchronous-codec = { workspace = true }
 futures = { workspace = true }
 futures-timer = "3.0.3"
 futures-bounded = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
 lru = "0.12.3"
 quick-protobuf-codec = { workspace = true }
@@ -28,8 +28,8 @@ either = "1.12.0"
 
 [dev-dependencies]
 async-std = { version = "1.6.2", features = ["attributes"] }
-libp2p-swarm-test = { path = "../../swarm-test" }
-libp2p-swarm = { workspace = true, features = ["macros"] }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-swarm = { workspace = true, features = ["macros"] }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 
 # Passing arguments to the docsrs builder in order to properly document cfg's.

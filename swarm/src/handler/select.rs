@@ -25,7 +25,7 @@ use std::{
 
 use either::Either;
 use futures::{future, ready};
-use libp2p_core::upgrade::SelectUpgrade;
+use ant_libp2p_core::upgrade::SelectUpgrade;
 
 use crate::{
     handler::{

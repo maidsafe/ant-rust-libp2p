@@ -1,5 +1,5 @@
 [package]
-name = "libp2p-upnp"
+name = "ant-libp2p-upnp"
 edition = "2021"
 rust-version = "1.60.0"
 description = "UPnP support for libp2p transports"
@@ -14,8 +14,8 @@ publish = true
 futures = { workspace = true }
 futures-timer = "3.0.3"
 igd-next = "0.15.1"
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 tokio = { workspace = true, default-features = false, features = ["rt"], optional = true }
 tracing = { workspace = true }
 

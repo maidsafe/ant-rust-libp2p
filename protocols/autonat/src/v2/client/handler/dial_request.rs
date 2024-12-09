@@ -9,11 +9,11 @@ use std::{
 
 use futures::{channel::oneshot, AsyncWrite};
 use futures_bounded::FuturesMap;
-use libp2p_core::{
+use ant_libp2p_core::{
     upgrade::{DeniedUpgrade, ReadyUpgrade},
     Multiaddr,
 };
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     handler::{
         ConnectionEvent, DialUpgradeError, FullyNegotiatedOutbound, OutboundUpgradeSend,
         ProtocolsChange,
@@ -219,7 +219,7 @@ async fn start_stream_handle(
             StreamUpgradeError::Timeout => Error::Io(io::ErrorKind::TimedOut.into()),
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            StreamUpgradeError::Apply(v) => libp2p_core::util::unreachable(v),
+            StreamUpgradeError::Apply(v) => ant_libp2p_core::util::unreachable(v),
             StreamUpgradeError::Io(e) => Error::Io(e),
         })?;
 

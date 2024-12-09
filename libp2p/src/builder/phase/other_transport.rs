@@ -1,3 +1,5 @@
+use ant_libp2p_core as libp2p_core;
+
 use std::{convert::Infallible, marker::PhantomData, sync::Arc};
 
 use libp2p_core::{

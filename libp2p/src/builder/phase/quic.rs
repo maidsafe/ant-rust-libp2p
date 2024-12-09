@@ -1,3 +1,5 @@
+use ant_libp2p_core as libp2p_core;
+
 use std::{marker::PhantomData, sync::Arc};
 
 #[cfg(all(not(target_arch = "wasm32"), feature = "websocket"))]

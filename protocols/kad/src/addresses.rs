@@ -20,6 +20,8 @@
 
 use std::fmt;
 
+use ant_libp2p_core as libp2p_core;
+
 use libp2p_core::Multiaddr;
 use smallvec::SmallVec;
 

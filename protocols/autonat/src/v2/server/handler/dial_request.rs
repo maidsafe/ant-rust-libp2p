@@ -11,12 +11,12 @@ use futures::{
     AsyncRead, AsyncWrite, SinkExt, StreamExt,
 };
 use futures_bounded::FuturesSet;
-use libp2p_core::{
+use ant_libp2p_core::{
     upgrade::{DeniedUpgrade, ReadyUpgrade},
     Multiaddr,
 };
 use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     handler::{ConnectionEvent, FullyNegotiatedInbound, ListenUpgradeError},
     ConnectionHandler, ConnectionHandlerEvent, StreamProtocol, SubstreamProtocol,
 };

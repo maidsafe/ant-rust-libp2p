@@ -1,5 +1,5 @@
 [package]
-name = "libp2p-kad"
+name = "ant-libp2p-kad"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Kademlia protocol for libp2p"
@@ -17,8 +17,8 @@ either = "1.11"
 fnv = "1.0"
 asynchronous-codec = { workspace = true }
 futures = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 futures-bounded = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }
@@ -36,11 +36,11 @@ tracing = { workspace = true }
 [dev-dependencies]
 async-std = { version = "1.12.0", features = ["attributes"] }
 futures-timer = "3.0"
-libp2p-identify = { path = "../identify" }
-libp2p-noise = { workspace = true }
-libp2p-swarm = { path = "../../swarm", features = ["macros"] }
-libp2p-swarm-test = { path = "../../swarm-test" }
-libp2p-yamux = { workspace = true }
+ant-libp2p-identify = { path = "../identify" }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-swarm = { path = "../../swarm", features = ["macros"] }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-yamux = { workspace = true }
 quickcheck = { workspace = true }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 

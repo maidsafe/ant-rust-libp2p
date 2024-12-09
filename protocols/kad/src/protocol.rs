@@ -26,6 +26,9 @@
 //! to poll the underlying transport for incoming messages, and the `Sink` component
 //! is used to send messages to remote peers.
 
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::{io, iter, marker::PhantomData, time::Duration};
 
 use asynchronous_codec::{Decoder, Encoder, Framed};

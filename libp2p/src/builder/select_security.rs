@@ -21,6 +21,8 @@
 
 #![allow(unreachable_pub)]
 
+use ant_libp2p_core as libp2p_core;
+
 use std::iter::{Chain, Map};
 
 use either::Either;

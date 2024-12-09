@@ -18,7 +18,8 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-//! A collection of types using the Gossipsub system.
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::{collections::BTreeSet, fmt, fmt::Debug};
 
 use futures_timer::Delay;

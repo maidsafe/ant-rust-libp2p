@@ -26,7 +26,7 @@ use std::{
     time::Duration,
 };
 
-use libp2p_core::multiaddr::{Multiaddr, Protocol};
+use ant_libp2p_core::multiaddr::{Multiaddr, Protocol};
 use libp2p_identity::PeerId;
 use web_time::Instant;
 

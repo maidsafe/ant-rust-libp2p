@@ -31,6 +31,13 @@ use std::{
     task::{Context, Poll},
 };
 
+use ant_libp2p_core::{multiaddr::Protocol, transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_swarm::{
+    behaviour::{ConnectionClosed, ConnectionEstablished, FromSwarm},
+    dial_opts::DialOpts,
+    dummy, ConnectionDenied, ConnectionHandler, ConnectionId, DialFailure, NetworkBehaviour,
+    NotifyHandler, Stream, THandler, THandlerInEvent, THandlerOutEvent, ToSwarm,
+};
 use bytes::Bytes;
 use either::Either;
 use futures::{
@@ -40,14 +47,7 @@ use futures::{
     ready,
     stream::StreamExt,
 };
-use libp2p_core::{multiaddr::Protocol, transport::PortUse, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_swarm::{
-    behaviour::{ConnectionClosed, ConnectionEstablished, FromSwarm},
-    dial_opts::DialOpts,
-    dummy, ConnectionDenied, ConnectionHandler, ConnectionId, DialFailure, NetworkBehaviour,
-    NotifyHandler, Stream, THandler, THandlerInEvent, THandlerOutEvent, ToSwarm,
-};
 use transport::Transport;
 
 use crate::{
@@ -245,7 +245,7 @@ impl NetworkBehaviour for Behaviour {
             Either::Left(e) => e,
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            Either::Right(v) => libp2p_core::util::unreachable(v),
+            Either::Right(v) => ant_libp2p_core::util::unreachable(v),
         };
 
         let event = match handler_event {

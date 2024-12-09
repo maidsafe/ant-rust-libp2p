@@ -24,7 +24,7 @@ use std::{
     task::{Context, Poll},
 };
 
-use libp2p_core::upgrade::PendingUpgrade;
+use ant_libp2p_core::upgrade::PendingUpgrade;
 
 use crate::handler::{
     ConnectionEvent, ConnectionHandler, ConnectionHandlerEvent, FullyNegotiatedInbound,
@@ -58,7 +58,7 @@ impl ConnectionHandler for PendingConnectionHandler {
     fn on_behaviour_event(&mut self, v: Self::FromBehaviour) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(v)
+        ant_libp2p_core::util::unreachable(v)
     }
 
     fn poll(
@@ -84,17 +84,17 @@ impl ConnectionHandler for PendingConnectionHandler {
             #[allow(unreachable_patterns)]
             ConnectionEvent::FullyNegotiatedInbound(FullyNegotiatedInbound {
                 protocol, ..
-            }) => libp2p_core::util::unreachable(protocol),
+            }) => ant_libp2p_core::util::unreachable(protocol),
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
             ConnectionEvent::FullyNegotiatedOutbound(FullyNegotiatedOutbound {
                 protocol,
                 info: _info,
             }) => {
-                libp2p_core::util::unreachable(protocol);
+                ant_libp2p_core::util::unreachable(protocol);
                 #[allow(unreachable_code, clippy::used_underscore_binding)]
                 {
-                    libp2p_core::util::unreachable(_info);
+                    ant_libp2p_core::util::unreachable(_info);
                 }
             }
             // TODO: remove when Rust 1.82 is MSRV

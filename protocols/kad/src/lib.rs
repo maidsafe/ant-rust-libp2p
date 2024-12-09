@@ -54,6 +54,8 @@ mod proto {
     };
 }
 
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::num::NonZeroUsize;
 
 pub use addresses::Addresses;

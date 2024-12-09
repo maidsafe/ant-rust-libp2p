@@ -16,8 +16,8 @@ cuckoofilter = "0.5.0"
 fnv = "1.0"
 bytes = "1.6"
 futures = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }

@@ -18,6 +18,8 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+use ant_libp2p_core as libp2p_core;
+
 use std::{error, fmt};
 
 use libp2p_core::Multiaddr;

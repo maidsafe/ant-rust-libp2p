@@ -19,13 +19,13 @@ rand = "0.8"
 pin-project = "1.1.5"
 
 [dev-dependencies]
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true, features = ["ed25519", "rsa", "ecdsa","secp256k1", "rand"] }
-libp2p-noise = { workspace = true }
-libp2p-swarm = { workspace = true, features = ["tokio"] }
-libp2p-tcp = { workspace = true, features = ["tokio"] }
-libp2p-websocket = { workspace = true }
-libp2p-yamux = { workspace = true }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-swarm = { workspace = true, features = ["tokio"] }
+ant-libp2p-tcp = { workspace = true, features = ["tokio"] }
+ant-libp2p-websocket = { workspace = true }
+ant-libp2p-yamux = { workspace = true }
 quickcheck = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 

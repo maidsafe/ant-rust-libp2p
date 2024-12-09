@@ -18,6 +18,9 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::{
     cmp::{max, Ordering, Ordering::Equal},
     collections::{BTreeSet, HashMap, HashSet, VecDeque},

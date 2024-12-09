@@ -22,10 +22,10 @@ use std::io;
 
 use asynchronous_codec::{FramedRead, FramedWrite};
 use futures::prelude::*;
-use libp2p_core::{multiaddr, Multiaddr};
+use ant_libp2p_core::{multiaddr, Multiaddr};
 use libp2p_identity as identity;
 use libp2p_identity::PublicKey;
-use libp2p_swarm::StreamProtocol;
+use ant_libp2p_swarm::StreamProtocol;
 use thiserror::Error;
 
 use crate::proto;

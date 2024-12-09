@@ -17,10 +17,10 @@ bimap = "0.6.3"
 futures = { workspace = true, features = ["std"] }
 futures-timer = "3.0.3"
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
-libp2p-request-response = { workspace = true }
+ant-libp2p-request-response = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }
 rand = "0.8"
@@ -28,13 +28,13 @@ thiserror = { workspace = true }
 tracing = { workspace = true }
 
 [dev-dependencies]
-libp2p-swarm = { workspace = true, features = ["macros", "tokio"] }
-libp2p-noise = { workspace = true }
-libp2p-ping = { workspace = true }
-libp2p-identify = { workspace = true }
-libp2p-swarm-test = { path = "../../swarm-test" }
-libp2p-tcp = { workspace = true, features = ["tokio"] }
-libp2p-yamux = { workspace = true }
+ant-libp2p-swarm = { workspace = true, features = ["macros", "tokio"] }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-ping = { workspace = true }
+ant-libp2p-identify = { workspace = true }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-tcp = { workspace = true, features = ["tokio"] }
+ant-libp2p-yamux = { workspace = true }
 rand = "0.8"
 tokio = { workspace = true, features = [ "rt-multi-thread", "time", "macros", "sync", "process", "fs", "net" ] }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }

@@ -25,15 +25,15 @@ use std::{
     task::{Context, Poll, Waker},
 };
 
+use ant_libp2p_core::{
+    multiaddr::{Multiaddr, Protocol},
+    transport::{DialOpts, ListenerId, TransportError, TransportEvent},
+};
 use futures::{
     channel::{mpsc, oneshot},
     future::{ready, BoxFuture, FutureExt, Ready},
     sink::SinkExt,
     stream::{SelectAll, Stream, StreamExt},
-};
-use libp2p_core::{
-    multiaddr::{Multiaddr, Protocol},
-    transport::{DialOpts, ListenerId, TransportError, TransportEvent},
 };
 use libp2p_identity::PeerId;
 use thiserror::Error;
@@ -52,17 +52,17 @@ use crate::{
 ///
 /// Note: The transport only handles listening and dialing on relayed [`Multiaddr`], and depends on
 /// an other transport to do the actual transmission of data. They should be combined through the
-/// [`OrTransport`](libp2p_core::transport::choice::OrTransport).
+/// [`OrTransport`](ant_libp2p_core::transport::choice::OrTransport).
 ///
 /// Allows the local node to:
 ///
 /// 1. Establish relayed connections by dialing `/p2p-circuit` addresses.
 ///
 ///    ```
-///    # use libp2p_core::{Multiaddr, multiaddr::{Protocol}, Transport,
+///    # use ant_libp2p_core::{Multiaddr, multiaddr::{Protocol}, Transport,
 ///    # transport::{DialOpts, PortUse}, connection::Endpoint};
-///    # use libp2p_core::transport::memory::MemoryTransport;
-///    # use libp2p_core::transport::choice::OrTransport;
+///    # use ant_libp2p_core::transport::memory::MemoryTransport;
+///    # use ant_libp2p_core::transport::choice::OrTransport;
 ///    # use libp2p_relay as relay;
 ///    # use libp2p_identity::PeerId;
 ///    let actual_transport = MemoryTransport::default();
@@ -86,9 +86,9 @@ use crate::{
 /// 3. Listen for incoming relayed connections via specific relay.
 ///
 ///    ```
-///    # use libp2p_core::{Multiaddr, multiaddr::{Protocol}, transport::ListenerId, Transport};
-///    # use libp2p_core::transport::memory::MemoryTransport;
-///    # use libp2p_core::transport::choice::OrTransport;
+///    # use ant_libp2p_core::{Multiaddr, multiaddr::{Protocol}, transport::ListenerId, Transport};
+///    # use ant_libp2p_core::transport::memory::MemoryTransport;
+///    # use ant_libp2p_core::transport::choice::OrTransport;
 ///    # use libp2p_relay as relay;
 ///    # use libp2p_identity::PeerId;
 ///    # let relay_id = PeerId::random();
@@ -122,7 +122,7 @@ impl Transport {
     }
 }
 
-impl libp2p_core::Transport for Transport {
+impl ant_libp2p_core::Transport for Transport {
     type Output = Connection;
     type Error = Error;
     type ListenerUpgrade = Ready<Result<Self::Output, Self::Error>>;
@@ -319,7 +319,7 @@ pub(crate) struct Listener {
     /// Channel for messages from the behaviour [`Handler`][super::handler::Handler].
     from_behaviour: mpsc::Receiver<ToListenerMsg>,
     /// The listener can be closed either manually with
-    /// [`Transport::remove_listener`](libp2p_core::Transport) or if the sender side of the
+    /// [`Transport::remove_listener`](ant_libp2p_core::Transport) or if the sender side of the
     /// `from_behaviour` channel is dropped.
     is_closed: bool,
     waker: Option<Waker>,
@@ -346,7 +346,7 @@ impl Listener {
 }
 
 impl Stream for Listener {
-    type Item = TransportEvent<<Transport as libp2p_core::Transport>::ListenerUpgrade, Error>;
+    type Item = TransportEvent<<Transport as ant_libp2p_core::Transport>::ListenerUpgrade, Error>;
 
     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
         loop {
@@ -445,7 +445,7 @@ impl From<Error> for TransportError<Error> {
 }
 
 /// Message from the [`Transport`] to the [`Behaviour`](crate::Behaviour)
-/// [`NetworkBehaviour`](libp2p_swarm::NetworkBehaviour).
+/// [`NetworkBehaviour`](ant_libp2p_swarm::NetworkBehaviour).
 pub(crate) enum TransportToBehaviourMsg {
     /// Dial destination node via relay node.
     #[allow(dead_code)]

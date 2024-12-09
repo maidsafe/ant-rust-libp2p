@@ -1,3 +1,6 @@
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_swarm as libp2p_swarm;
+
 use libp2p_core::Transport;
 use libp2p_swarm::Swarm;
 

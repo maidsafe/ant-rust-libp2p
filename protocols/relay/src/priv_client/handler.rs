@@ -26,18 +26,18 @@ use std::{
     time::Duration,
 };
 
+use ant_libp2p_core::{multiaddr::Protocol, upgrade::ReadyUpgrade, Multiaddr};
+use ant_libp2p_swarm::{
+    handler::{ConnectionEvent, FullyNegotiatedInbound},
+    ConnectionHandler, ConnectionHandlerEvent, Stream, StreamProtocol, StreamUpgradeError,
+    SubstreamProtocol,
+};
 use futures::{
     channel::{mpsc, mpsc::Sender, oneshot},
     future::FutureExt,
 };
 use futures_timer::Delay;
-use libp2p_core::{multiaddr::Protocol, upgrade::ReadyUpgrade, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_swarm::{
-    handler::{ConnectionEvent, FullyNegotiatedInbound},
-    ConnectionHandler, ConnectionHandlerEvent, Stream, StreamProtocol, StreamUpgradeError,
-    SubstreamProtocol,
-};
 
 use crate::{
     client::Connection,
@@ -453,7 +453,7 @@ impl ConnectionHandler for Handler {
             }
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            ConnectionEvent::ListenUpgradeError(ev) => libp2p_core::util::unreachable(ev.error),
+            ConnectionEvent::ListenUpgradeError(ev) => ant_libp2p_core::util::unreachable(ev.error),
             ConnectionEvent::DialUpgradeError(ev) => {
                 if let Some(next) = self.pending_streams.pop_front() {
                     let _ = next.send(Err(ev.error));
@@ -593,7 +593,7 @@ fn into_reserve_error(e: StreamUpgradeError<Infallible>) -> outbound_hop::Reserv
         }
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        StreamUpgradeError::Apply(never) => libp2p_core::util::unreachable(never),
+        StreamUpgradeError::Apply(never) => ant_libp2p_core::util::unreachable(never),
         StreamUpgradeError::NegotiationFailed => outbound_hop::ReserveError::Unsupported,
         StreamUpgradeError::Io(e) => outbound_hop::ReserveError::Io(e),
     }
@@ -606,7 +606,7 @@ fn into_connect_error(e: StreamUpgradeError<Infallible>) -> outbound_hop::Connec
         }
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        StreamUpgradeError::Apply(never) => libp2p_core::util::unreachable(never),
+        StreamUpgradeError::Apply(never) => ant_libp2p_core::util::unreachable(never),
         StreamUpgradeError::NegotiationFailed => outbound_hop::ConnectError::Unsupported,
         StreamUpgradeError::Io(e) => outbound_hop::ConnectError::Io(e),
     }

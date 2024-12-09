@@ -20,8 +20,8 @@
 
 use std::{io, time::Duration};
 
+use ant_libp2p_swarm::StreamProtocol;
 use futures::prelude::*;
-use libp2p_swarm::StreamProtocol;
 use rand::{distributions, prelude::*};
 use web_time::Instant;
 
@@ -82,12 +82,12 @@ where
 
 #[cfg(test)]
 mod tests {
-    use futures::StreamExt;
-    use libp2p_core::{
+    use ant_libp2p_core::{
         multiaddr::multiaddr,
         transport::{memory::MemoryTransport, DialOpts, ListenerId, PortUse, Transport},
         Endpoint,
     };
+    use futures::StreamExt;
 
     use super::*;
 

@@ -35,7 +35,7 @@
 //!
 //! # Usage
 //!
-//! The [`Behaviour`] struct implements a [`NetworkBehaviour`](libp2p_swarm::NetworkBehaviour)
+//! The [`Behaviour`] struct implements a [`NetworkBehaviour`](ant_libp2p_swarm::NetworkBehaviour)
 //! that negotiates and executes the protocol on every established connection, emitting
 //! [`Event`]s.
 

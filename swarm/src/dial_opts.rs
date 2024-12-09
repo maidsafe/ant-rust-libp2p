@@ -21,7 +21,7 @@
 
 use std::num::NonZeroU8;
 
-use libp2p_core::{connection::Endpoint, multiaddr::Protocol, transport::PortUse, Multiaddr};
+use ant_libp2p_core::{connection::Endpoint, multiaddr::Protocol, transport::PortUse, Multiaddr};
 use libp2p_identity::PeerId;
 
 use crate::ConnectionId;
@@ -32,7 +32,7 @@ macro_rules! fn_override_role {
         /// listener_.
         ///
         /// See
-        /// [`ConnectedPoint::Dialer`](libp2p_core::connection::ConnectedPoint::Dialer)
+        /// [`ConnectedPoint::Dialer`](ant_libp2p_core::connection::ConnectedPoint::Dialer)
         /// for details.
         pub fn override_role(mut self) -> Self {
             self.role_override = Endpoint::Listener;

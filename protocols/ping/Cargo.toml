@@ -1,12 +1,12 @@
 [package]
-name = "libp2p-ping"
+name = "ant-libp2p-ping"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Ping protocol for libp2p"
 version = "0.45.1"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
@@ -15,15 +15,15 @@ either = "1.11.0"
 futures = { workspace = true }
 futures-timer = "3.0.3"
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
 rand = "0.8"
 tracing = { workspace = true }
 
 [dev-dependencies]
-libp2p-swarm = { workspace = true, features = ["macros"] }
-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-swarm = { workspace = true, features = ["macros"] }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
 quickcheck = { workspace = true }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 tokio = {workspace = true, features = ["rt", "macros"]}

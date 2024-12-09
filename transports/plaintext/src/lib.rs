@@ -22,6 +22,8 @@
 
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
+use ant_libp2p_core as libp2p_core;
+
 use std::{
     io, iter,
     pin::Pin,

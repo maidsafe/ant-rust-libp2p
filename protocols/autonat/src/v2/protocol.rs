@@ -4,7 +4,7 @@ use std::{io, io::ErrorKind};
 
 use asynchronous_codec::{Framed, FramedRead, FramedWrite};
 use futures::{AsyncRead, AsyncWrite, SinkExt, StreamExt};
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 use quick_protobuf_codec::Codec;
 use rand::Rng;
 

@@ -29,7 +29,7 @@ use futures::{
     ready,
     stream::{FuturesUnordered, StreamExt},
 };
-use libp2p_core::muxing::StreamMuxerBox;
+use ant_libp2p_core::muxing::StreamMuxerBox;
 use libp2p_identity::PeerId;
 
 use crate::{transport::TransportError, Multiaddr};

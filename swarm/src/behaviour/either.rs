@@ -21,7 +21,7 @@
 use std::task::{Context, Poll};
 
 use either::Either;
-use libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
 
 use crate::{

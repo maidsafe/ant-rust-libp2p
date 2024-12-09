@@ -1,4 +1,4 @@
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 
 use crate::behaviour::{ExternalAddrConfirmed, ExternalAddrExpired, FromSwarm};
 
@@ -87,7 +87,7 @@ impl ExternalAddresses {
 
 #[cfg(test)]
 mod tests {
-    use libp2p_core::multiaddr::Protocol;
+    use ant_libp2p_core::multiaddr::Protocol;
     use once_cell::sync::Lazy;
     use rand::Rng;
 

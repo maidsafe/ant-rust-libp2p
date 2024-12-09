@@ -7,8 +7,8 @@ use std::{
 
 use futures::{AsyncRead, AsyncWrite};
 use futures_bounded::FuturesSet;
-use libp2p_core::upgrade::{DeniedUpgrade, ReadyUpgrade};
-use libp2p_swarm::{
+use ant_libp2p_core::upgrade::{DeniedUpgrade, ReadyUpgrade};
+use ant_libp2p_swarm::{
     handler::{ConnectionEvent, DialUpgradeError, FullyNegotiatedOutbound},
     ConnectionHandler, ConnectionHandlerEvent, StreamProtocol, StreamUpgradeError,
     SubstreamProtocol,

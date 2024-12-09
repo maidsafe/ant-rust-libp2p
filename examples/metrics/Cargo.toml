@@ -11,7 +11,7 @@ release = false
 [dependencies]
 futures = { workspace = true }
 axum = "0.7"
-libp2p = { path = "../../libp2p", features = ["tokio", "metrics", "ping", "noise", "identify", "tcp", "yamux", "macros"] }
+ant-libp2p = { path = "../../libp2p", features = ["tokio", "metrics", "ping", "noise", "identify", "tcp", "yamux", "macros"] }
 opentelemetry = { version = "0.25.0", features = ["metrics"] }
 opentelemetry-otlp = { version = "0.25.0", features = ["metrics"] }
 opentelemetry_sdk = { version = "0.25.0", features = ["rt-tokio", "metrics"] }

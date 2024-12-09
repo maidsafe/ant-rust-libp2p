@@ -14,7 +14,7 @@ categories = ["network-programming", "asynchronous"]
 async-std-resolver = { version = "0.24", optional = true }
 async-trait = "0.1.80"
 futures = { workspace = true }
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true }
 parking_lot = "0.12.3"
 hickory-resolver = { version = "0.24.1", default-features = false, features = ["system-config"] }

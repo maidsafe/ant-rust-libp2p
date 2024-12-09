@@ -1,5 +1,5 @@
 use either::Either;
-use libp2p_swarm::dummy;
+use ant_libp2p_swarm::dummy;
 
 pub(crate) mod dial_back;
 pub(crate) mod dial_request;

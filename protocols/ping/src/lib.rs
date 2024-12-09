@@ -47,7 +47,7 @@
 //!   connections to a peer
 //!
 //! [`Swarm`]: libp2p_swarm::Swarm
-//! [`Transport`]: libp2p_core::Transport
+//! [`Transport`]: ant_libp2p_core::Transport
 
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
@@ -60,14 +60,14 @@ use std::{
     time::Duration,
 };
 
-use handler::Handler;
-pub use handler::{Config, Failure};
-use libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
-use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_swarm::{
     behaviour::FromSwarm, ConnectionDenied, ConnectionId, NetworkBehaviour, THandler,
     THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
+use handler::Handler;
+pub use handler::{Config, Failure};
+use libp2p_identity::PeerId;
 
 pub use self::protocol::PROTOCOL_NAME;
 

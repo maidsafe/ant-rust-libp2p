@@ -73,7 +73,7 @@ mod translation;
 pub mod derive_prelude {
     pub use either::Either;
     pub use futures::prelude as futures;
-    pub use libp2p_core::{
+    pub use ant_libp2p_core::{
         transport::{ListenerId, PortUse},
         ConnectedPoint, Endpoint, Multiaddr,
     };
@@ -120,7 +120,7 @@ pub use handler::{
     ConnectionHandler, ConnectionHandlerEvent, ConnectionHandlerSelect, OneShotHandler,
     OneShotHandlerConfig, StreamUpgradeError, SubstreamProtocol,
 };
-use libp2p_core::{
+use ant_libp2p_core::{
     connection::ConnectedPoint,
     muxing::StreamMuxerBox,
     transport::{self, ListenerId, TransportError, TransportEvent},
@@ -404,8 +404,8 @@ where
     /// ```
     /// # use libp2p_swarm::Swarm;
     /// # use libp2p_swarm::dial_opts::{DialOpts, PeerCondition};
-    /// # use libp2p_core::{Multiaddr, Transport};
-    /// # use libp2p_core::transport::dummy::DummyTransport;
+    /// # use ant_libp2p_core::{Multiaddr, Transport};
+    /// # use ant_libp2p_core::transport::dummy::DummyTransport;
     /// # use libp2p_swarm::dummy;
     /// # use libp2p_identity::PeerId;
     /// #
@@ -1473,7 +1473,7 @@ impl Config {
     /// > are ignored.
     pub fn with_substream_upgrade_protocol_override(
         mut self,
-        v: libp2p_core::upgrade::Version,
+        v: ant_libp2p_core::upgrade::Version,
     ) -> Self {
         self.pool_config = self.pool_config.with_substream_upgrade_protocol_override(v);
         self
@@ -1750,7 +1750,7 @@ impl NetworkInfo {
 
 #[cfg(test)]
 mod tests {
-    use libp2p_core::{
+    use ant_libp2p_core::{
         multiaddr,
         multiaddr::multiaddr,
         transport,

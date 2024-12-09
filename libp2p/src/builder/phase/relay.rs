@@ -1,3 +1,5 @@
+use ant_libp2p_core as libp2p_core;
+
 use std::marker::PhantomData;
 
 #[cfg(feature = "relay")]

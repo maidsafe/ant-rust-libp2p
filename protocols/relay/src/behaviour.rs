@@ -30,14 +30,16 @@ use std::{
     time::Duration,
 };
 
-use either::Either;
-use libp2p_core::{multiaddr::Protocol, transport::PortUse, ConnectedPoint, Endpoint, Multiaddr};
-use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_core::{
+    multiaddr::Protocol, transport::PortUse, ConnectedPoint, Endpoint, Multiaddr,
+};
+use ant_libp2p_swarm::{
     behaviour::{ConnectionClosed, FromSwarm},
     dummy, ConnectionDenied, ConnectionId, ExternalAddresses, NetworkBehaviour, NotifyHandler,
     THandler, THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
+use either::Either;
+use libp2p_identity::PeerId;
 use web_time::Instant;
 
 use crate::{
@@ -374,7 +376,7 @@ impl NetworkBehaviour for Behaviour {
             Either::Left(e) => e,
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            Either::Right(v) => libp2p_core::util::unreachable(v),
+            Either::Right(v) => ant_libp2p_core::util::unreachable(v),
         };
 
         match event {

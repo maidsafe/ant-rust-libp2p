@@ -1,5 +1,5 @@
 [package]
-name = "libp2p-websocket-websys"
+name = "ant-libp2p-websocket-websys"
 edition = "2021"
 rust-version = "1.60.0"
 description = "WebSocket for libp2p under WASM environment"
@@ -14,7 +14,7 @@ categories = ["network-programming", "asynchronous"]
 bytes = "1.6.0"
 futures = { workspace = true }
 js-sys = "0.3.69"
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 tracing = { workspace = true }
 parking_lot = "0.12.3"
 send_wrapper = "0.6.0"
@@ -28,6 +28,6 @@ web-sys = { version = "0.3.69", features = ["BinaryType", "CloseEvent", "Message
 all-features = true
 
 [dev-dependencies]
-libp2p-yamux = { workspace = true }
-libp2p-noise = { workspace = true }
+ant-libp2p-yamux = { workspace = true }
+ant-libp2p-noise = { workspace = true }
 libp2p-identity = { workspace = true, features = ["rand"] }

@@ -20,6 +20,16 @@
 
 use std::{error::Error, time::Duration};
 
+use ant_libp2p_core::{
+    multiaddr::{Multiaddr, Protocol},
+    muxing::StreamMuxerBox,
+    transport::{choice::OrTransport, Boxed, MemoryTransport, Transport},
+    upgrade,
+};
+use ant_libp2p_swarm::{
+    dial_opts::DialOpts, Config, DialError, NetworkBehaviour, Swarm, SwarmEvent,
+};
+use ant_libp2p_swarm_test::SwarmExt;
 use futures::{
     executor::LocalPool,
     future::FutureExt,
@@ -27,19 +37,11 @@ use futures::{
     stream::StreamExt,
     task::Spawn,
 };
-use libp2p_core::{
-    multiaddr::{Multiaddr, Protocol},
-    muxing::StreamMuxerBox,
-    transport::{choice::OrTransport, Boxed, MemoryTransport, Transport},
-    upgrade,
-};
 use libp2p_identity as identity;
 use libp2p_identity::PeerId;
 use libp2p_ping as ping;
 use libp2p_plaintext as plaintext;
 use libp2p_relay as relay;
-use libp2p_swarm::{dial_opts::DialOpts, Config, DialError, NetworkBehaviour, Swarm, SwarmEvent};
-use libp2p_swarm_test::SwarmExt;
 use tracing_subscriber::EnvFilter;
 
 #[test]
@@ -499,14 +501,14 @@ where
 }
 
 #[derive(NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct Relay {
     relay: relay::Behaviour,
     ping: ping::Behaviour,
 }
 
 #[derive(NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct Client {
     relay: relay::client::Behaviour,
     ping: ping::Behaviour,

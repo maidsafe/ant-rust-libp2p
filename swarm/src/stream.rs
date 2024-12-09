@@ -6,7 +6,7 @@ use std::{
 };
 
 use futures::{AsyncRead, AsyncWrite};
-use libp2p_core::{muxing::SubstreamBox, Negotiated};
+use ant_libp2p_core::{muxing::SubstreamBox, Negotiated};
 
 /// Counter for the number of active streams on a connection.
 #[derive(Debug, Clone)]

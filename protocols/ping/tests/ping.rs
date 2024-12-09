@@ -22,8 +22,8 @@
 
 use std::{num::NonZeroU8, time::Duration};
 
+use ant_libp2p_swarm::{dummy, Swarm, SwarmEvent};
 use libp2p_ping as ping;
-use libp2p_swarm::{dummy, Swarm, SwarmEvent};
 use libp2p_swarm_test::SwarmExt;
 use quickcheck::*;
 

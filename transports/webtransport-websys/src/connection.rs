@@ -1,3 +1,6 @@
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_noise as libp2p_noise;
+
 use std::{
     collections::HashSet,
     future::poll_fn,

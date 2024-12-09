@@ -21,7 +21,7 @@
 use std::fmt::Debug;
 
 use futures::StreamExt;
-use libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
 use libp2p_identify as identify;
 use libp2p_ping as ping;
 use libp2p_swarm::{
@@ -580,7 +580,7 @@ fn custom_out_event_no_type_parameters() {
         ) {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            libp2p_core::util::unreachable(message);
+            ant_libp2p_core::util::unreachable(message);
         }
 
         fn poll(

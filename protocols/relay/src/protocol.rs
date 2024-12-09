@@ -20,7 +20,7 @@
 
 use std::time::Duration;
 
-use libp2p_swarm::StreamProtocol;
+use ant_libp2p_swarm::StreamProtocol;
 
 use crate::proto;
 

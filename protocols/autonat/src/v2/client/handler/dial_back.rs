@@ -7,8 +7,8 @@ use std::{
 
 use futures::channel::oneshot;
 use futures_bounded::StreamSet;
-use libp2p_core::upgrade::{DeniedUpgrade, ReadyUpgrade};
-use libp2p_swarm::{
+use ant_libp2p_core::upgrade::{DeniedUpgrade, ReadyUpgrade};
+use ant_libp2p_swarm::{
     handler::{ConnectionEvent, FullyNegotiatedInbound, ListenUpgradeError},
     ConnectionHandler, ConnectionHandlerEvent, StreamProtocol, SubstreamProtocol,
 };
@@ -86,7 +86,7 @@ impl ConnectionHandler for Handler {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
             ConnectionEvent::ListenUpgradeError(ListenUpgradeError { error, .. }) => {
-                libp2p_core::util::unreachable(error);
+                ant_libp2p_core::util::unreachable(error);
             }
             _ => {}
         }
@@ -94,7 +94,7 @@ impl ConnectionHandler for Handler {
 }
 
 struct State {
-    stream: libp2p_swarm::Stream,
+    stream: ant_libp2p_swarm::Stream,
     oneshot: Option<oneshot::Receiver<io::Result<()>>>,
 }
 
@@ -105,7 +105,7 @@ pub struct IncomingNonce {
 }
 
 fn perform_dial_back(
-    stream: libp2p_swarm::Stream,
+    stream: ant_libp2p_swarm::Stream,
 ) -> impl futures::Stream<Item = io::Result<IncomingNonce>> {
     let state = State {
         stream,

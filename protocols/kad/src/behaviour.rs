@@ -22,6 +22,9 @@
 
 mod test;
 
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::{
     collections::{BTreeMap, HashMap, HashSet, VecDeque},
     fmt,

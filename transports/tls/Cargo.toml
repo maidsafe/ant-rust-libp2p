@@ -11,7 +11,7 @@ exclude = ["src/test_assets"]
 [dependencies]
 futures = { workspace = true }
 futures-rustls = { workspace = true }
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true }
 rcgen = { workspace = true }
 ring = { workspace = true }
@@ -30,10 +30,10 @@ features = ["ring", "std"] # Must enable this to allow for custom verification c
 [dev-dependencies]
 hex = "0.4.3"
 hex-literal = "0.4.1"
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true, features = ["ed25519", "rsa", "secp256k1", "ecdsa", "rand"] }
-libp2p-swarm = { workspace = true, features = ["tokio"] }
-libp2p-yamux = { workspace = true }
+ant-libp2p-swarm = { workspace = true, features = ["tokio"] }
+ant-libp2p-yamux = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 
 # Passing arguments to the docsrs builder in order to properly document cfg's.

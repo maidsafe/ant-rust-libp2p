@@ -25,13 +25,13 @@ use std::{
     task::{Context, Poll},
 };
 
-use libp2p_core::{transport::PortUse, ConnectedPoint, Endpoint, Multiaddr};
-use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_core::{transport::PortUse, ConnectedPoint, Endpoint, Multiaddr};
+use ant_libp2p_swarm::{
     behaviour::{ConnectionEstablished, DialFailure, ListenFailure},
     dummy, ConnectionClosed, ConnectionDenied, ConnectionId, FromSwarm, NetworkBehaviour, THandler,
     THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
+use libp2p_identity::PeerId;
 
 /// A [`NetworkBehaviour`] that enforces a set of [`ConnectionLimits`].
 ///
@@ -364,7 +364,7 @@ impl NetworkBehaviour for Behaviour {
     ) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(event)
+        ant_libp2p_core::util::unreachable(event)
     }
 
     fn poll(&mut self, _: &mut Context<'_>) -> Poll<ToSwarm<Self::ToSwarm, THandlerInEvent<Self>>> {
@@ -599,7 +599,7 @@ mod tests {
         ) {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            libp2p_core::util::unreachable(event)
+            ant_libp2p_core::util::unreachable(event)
         }
 
         fn poll(

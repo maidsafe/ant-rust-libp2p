@@ -25,11 +25,11 @@ use std::{
     time::Duration,
 };
 
-use libp2p_core::{
+use ant_libp2p_core::{
     multiaddr, multiaddr::Protocol, transport::PortUse, ConnectedPoint, Endpoint, Multiaddr,
 };
 use libp2p_identity::{PeerId, PublicKey};
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     behaviour::{ConnectionClosed, ConnectionEstablished, DialFailure, FromSwarm},
     ConnectionDenied, ConnectionId, DialError, ExternalAddresses, ListenAddresses,
     NetworkBehaviour, NotifyHandler, PeerAddresses, StreamUpgradeError, THandler, THandlerInEvent,

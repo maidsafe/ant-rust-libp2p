@@ -25,9 +25,9 @@
 
 use std::convert::Infallible;
 
+use ant_libp2p_core::upgrade::{InboundUpgrade, OutboundUpgrade, UpgradeInfo};
+use ant_libp2p_swarm::Stream;
 use futures::future::{ready, Ready};
-use libp2p_core::upgrade::{InboundUpgrade, OutboundUpgrade, UpgradeInfo};
-use libp2p_swarm::Stream;
 use smallvec::SmallVec;
 
 /// The level of support for a particular protocol.

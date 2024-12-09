@@ -3,7 +3,7 @@ use std::{
     task::{Context, Poll},
 };
 
-use libp2p_core::{transport::PortUse, upgrade::DeniedUpgrade, Endpoint, Multiaddr};
+use ant_libp2p_core::{transport::PortUse, upgrade::DeniedUpgrade, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
 use libp2p_swarm::{
     handler::ConnectionEvent, ConnectionDenied, ConnectionHandler, ConnectionHandlerEvent,
@@ -132,7 +132,7 @@ impl ConnectionHandler for HandlerWithState {
     }
 
     fn on_behaviour_event(&mut self, event: Self::FromBehaviour) {
-        libp2p_core::util::unreachable(event)
+        ant_libp2p_core::util::unreachable(event)
     }
 
     fn on_connection_event(

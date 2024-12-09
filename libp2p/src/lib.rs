@@ -32,22 +32,59 @@
 #![doc(html_favicon_url = "https://libp2p.io/img/favicon.png")]
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
-pub use bytes;
-pub use futures;
 #[doc(inline)]
-pub use libp2p_allow_block_list as allow_block_list;
+pub use ant_libp2p_allow_block_list as allow_block_list;
 #[cfg(feature = "autonat")]
 #[doc(inline)]
-pub use libp2p_autonat as autonat;
+pub use ant_libp2p_autonat as autonat;
 #[doc(inline)]
-pub use libp2p_connection_limits as connection_limits;
+pub use ant_libp2p_connection_limits as connection_limits;
 #[doc(inline)]
-pub use libp2p_core as core;
+pub use ant_libp2p_core as core;
 #[doc(inline)]
-pub use libp2p_core::multihash;
+pub use ant_libp2p_core::multihash;
 #[cfg(feature = "dcutr")]
 #[doc(inline)]
-pub use libp2p_dcutr as dcutr;
+pub use ant_libp2p_dcutr as dcutr;
+#[cfg(feature = "gossipsub")]
+#[doc(inline)]
+pub use ant_libp2p_gossipsub as gossipsub;
+#[cfg(feature = "kad")]
+#[doc(inline)]
+pub use ant_libp2p_kad as kad;
+#[cfg(feature = "noise")]
+#[doc(inline)]
+pub use ant_libp2p_noise as noise;
+#[cfg(feature = "ping")]
+#[doc(inline)]
+pub use ant_libp2p_ping as ping;
+#[cfg(feature = "quic")]
+#[cfg(not(target_arch = "wasm32"))]
+pub use ant_libp2p_quic as quic;
+#[cfg(feature = "relay")]
+#[doc(inline)]
+pub use ant_libp2p_relay as relay;
+#[cfg(feature = "request-response")]
+#[doc(inline)]
+pub use ant_libp2p_request_response as request_response;
+#[doc(inline)]
+pub use ant_libp2p_swarm as swarm;
+#[cfg(feature = "websocket")]
+#[cfg(not(target_arch = "wasm32"))]
+#[doc(inline)]
+pub use ant_libp2p_websocket as websocket;
+#[cfg(feature = "websocket-websys")]
+#[doc(inline)]
+pub use ant_libp2p_websocket_websys as websocket_websys;
+#[cfg(feature = "webtransport-websys")]
+#[cfg_attr(docsrs, doc(cfg(feature = "webtransport-websys")))]
+#[doc(inline)]
+pub use ant_libp2p_webtransport_websys as webtransport_websys;
+#[cfg(feature = "yamux")]
+#[doc(inline)]
+pub use ant_libp2p_yamux as yamux;
+pub use bytes;
+pub use futures;
 #[cfg(feature = "dns")]
 #[cfg_attr(docsrs, doc(cfg(feature = "dns")))]
 #[cfg(not(target_arch = "wasm32"))]
@@ -56,15 +93,9 @@ pub use libp2p_dns as dns;
 #[cfg(feature = "floodsub")]
 #[doc(inline)]
 pub use libp2p_floodsub as floodsub;
-#[cfg(feature = "gossipsub")]
-#[doc(inline)]
-pub use libp2p_gossipsub as gossipsub;
 #[cfg(feature = "identify")]
 #[doc(inline)]
 pub use libp2p_identify as identify;
-#[cfg(feature = "kad")]
-#[doc(inline)]
-pub use libp2p_kad as kad;
 #[cfg(feature = "mdns")]
 #[cfg(not(target_arch = "wasm32"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "mdns")))]
@@ -78,32 +109,15 @@ pub use libp2p_memory_connection_limits as memory_connection_limits;
 #[cfg(feature = "metrics")]
 #[doc(inline)]
 pub use libp2p_metrics as metrics;
-#[cfg(feature = "noise")]
-#[doc(inline)]
-pub use libp2p_noise as noise;
-#[cfg(feature = "ping")]
-#[doc(inline)]
-pub use libp2p_ping as ping;
 #[cfg(feature = "plaintext")]
 #[doc(inline)]
 pub use libp2p_plaintext as plaintext;
 #[cfg(feature = "pnet")]
 #[doc(inline)]
 pub use libp2p_pnet as pnet;
-#[cfg(feature = "quic")]
-#[cfg(not(target_arch = "wasm32"))]
-pub use libp2p_quic as quic;
-#[cfg(feature = "relay")]
-#[doc(inline)]
-pub use libp2p_relay as relay;
 #[cfg(feature = "rendezvous")]
 #[doc(inline)]
 pub use libp2p_rendezvous as rendezvous;
-#[cfg(feature = "request-response")]
-#[doc(inline)]
-pub use libp2p_request_response as request_response;
-#[doc(inline)]
-pub use libp2p_swarm as swarm;
 #[cfg(feature = "tcp")]
 #[cfg(not(target_arch = "wasm32"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "tcp")))]
@@ -123,20 +137,6 @@ pub use libp2p_uds as uds;
 #[cfg(not(target_arch = "wasm32"))]
 #[doc(inline)]
 pub use libp2p_upnp as upnp;
-#[cfg(feature = "websocket")]
-#[cfg(not(target_arch = "wasm32"))]
-#[doc(inline)]
-pub use libp2p_websocket as websocket;
-#[cfg(feature = "websocket-websys")]
-#[doc(inline)]
-pub use libp2p_websocket_websys as websocket_websys;
-#[cfg(feature = "webtransport-websys")]
-#[cfg_attr(docsrs, doc(cfg(feature = "webtransport-websys")))]
-#[doc(inline)]
-pub use libp2p_webtransport_websys as webtransport_websys;
-#[cfg(feature = "yamux")]
-#[doc(inline)]
-pub use libp2p_yamux as yamux;
 #[doc(inline)]
 pub use multiaddr;
 
@@ -148,9 +148,9 @@ pub mod bandwidth;
 #[cfg(doc)]
 pub mod tutorials;
 
+pub use ant_libp2p_swarm::{Stream, StreamProtocol};
 pub use libp2p_identity as identity;
 pub use libp2p_identity::PeerId;
-pub use libp2p_swarm::{Stream, StreamProtocol};
 
 pub use self::{
     builder::SwarmBuilder,

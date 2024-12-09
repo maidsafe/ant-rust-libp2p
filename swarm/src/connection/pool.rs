@@ -36,7 +36,7 @@ use futures::{
     ready,
     stream::{FuturesUnordered, SelectAll},
 };
-use libp2p_core::{
+use ant_libp2p_core::{
     connection::Endpoint,
     muxing::{StreamMuxerBox, StreamMuxerExt},
     transport::PortUse,
@@ -108,7 +108,7 @@ where
     dial_concurrency_factor: NonZeroU8,
 
     /// The configured override for substream protocol upgrades, if any.
-    substream_upgrade_protocol_override: Option<libp2p_core::upgrade::Version>,
+    substream_upgrade_protocol_override: Option<ant_libp2p_core::upgrade::Version>,
 
     /// The maximum number of inbound streams concurrently negotiating on a connection.
     ///
@@ -974,7 +974,7 @@ pub(crate) struct PoolConfig {
     /// How long a connection should be kept alive once it is idling.
     pub(crate) idle_connection_timeout: Duration,
     /// The configured override for substream protocol upgrades, if any.
-    substream_upgrade_protocol_override: Option<libp2p_core::upgrade::Version>,
+    substream_upgrade_protocol_override: Option<ant_libp2p_core::upgrade::Version>,
 
     /// The maximum number of inbound streams concurrently negotiating on a connection.
     ///
@@ -1027,7 +1027,7 @@ impl PoolConfig {
     /// Configures an override for the substream upgrade protocol to use.
     pub(crate) fn with_substream_upgrade_protocol_override(
         mut self,
-        v: libp2p_core::upgrade::Version,
+        v: ant_libp2p_core::upgrade::Version,
     ) -> Self {
         self.substream_upgrade_protocol_override = Some(v);
         self

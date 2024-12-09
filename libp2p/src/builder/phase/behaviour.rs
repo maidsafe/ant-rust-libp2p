@@ -1,3 +1,5 @@
+use ant_libp2p_swarm as libp2p_swarm;
+
 use std::{convert::Infallible, marker::PhantomData};
 
 use libp2p_swarm::NetworkBehaviour;

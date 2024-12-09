@@ -1,12 +1,12 @@
 [package]
-name = "libp2p-gossipsub"
+name = "ant-libp2p-gossipsub"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Gossipsub protocol for libp2p"
 version = "0.48.0"
 authors = ["Age Manning <Age@AgeManning.com>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
@@ -26,9 +26,9 @@ futures-timer = "3.0.2"
 getrandom = "0.2.15"
 hex_fmt = "0.3.0"
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true, features = ["rand"] }
-libp2p-swarm = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }
 rand = "0.8"
@@ -43,10 +43,10 @@ prometheus-client = { workspace = true }
 
 [dev-dependencies]
 hex = "0.4.2"
-libp2p-core = { workspace = true }
-libp2p-yamux = { workspace = true }
-libp2p-noise = { workspace = true }
-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-yamux = { workspace = true }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
 quickcheck = { workspace = true }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 tokio = { workspace = true, features = ["rt", "rt-multi-thread", "time", "macros"] }

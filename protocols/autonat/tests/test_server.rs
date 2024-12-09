@@ -23,10 +23,10 @@ use std::{num::NonZeroU32, time::Duration};
 use libp2p_autonat::{
     Behaviour, Config, Event, InboundProbeError, InboundProbeEvent, ResponseError,
 };
-use libp2p_core::{multiaddr::Protocol, ConnectedPoint, Endpoint, Multiaddr};
+use ant_libp2p_core::{multiaddr::Protocol, ConnectedPoint, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_swarm::{DialError, Swarm, SwarmEvent};
-use libp2p_swarm_test::SwarmExt as _;
+use ant_libp2p_swarm::{DialError, Swarm, SwarmEvent};
+use ant_libp2p_swarm_test::SwarmExt as _;
 
 #[tokio::test]
 async fn test_dial_back() {

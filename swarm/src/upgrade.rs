@@ -19,7 +19,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 use futures::prelude::*;
-use libp2p_core::upgrade;
+use ant_libp2p_core::upgrade;
 
 use crate::Stream;
 

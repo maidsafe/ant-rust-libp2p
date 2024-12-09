@@ -27,14 +27,12 @@ use std::{
     time::Duration,
 };
 
-use either::Either;
-use futures::future;
-use libp2p_core::{
+use ant_libp2p_core::{
     multiaddr::Multiaddr,
     upgrade::{DeniedUpgrade, ReadyUpgrade},
     ConnectedPoint,
 };
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     handler::{
         ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound,
         ListenUpgradeError,
@@ -42,6 +40,8 @@ use libp2p_swarm::{
     ConnectionHandler, ConnectionHandlerEvent, StreamProtocol, StreamUpgradeError,
     SubstreamProtocol,
 };
+use either::Either;
+use futures::future;
 use protocol::{inbound, outbound};
 
 use crate::{behaviour::MAX_NUMBER_OF_UPGRADE_ATTEMPTS, protocol, PROTOCOL_NAME};
@@ -122,7 +122,7 @@ impl Handler {
             // A connection listener denies all incoming substreams, thus none can ever be fully
             // negotiated. TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            future::Either::Right(output) => libp2p_core::util::unreachable(output),
+            future::Either::Right(output) => ant_libp2p_core::util::unreachable(output),
         }
     }
 
@@ -162,7 +162,7 @@ impl Handler {
     ) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(error.into_inner());
+        ant_libp2p_core::util::unreachable(error.into_inner());
     }
 
     fn on_dial_upgrade_error(
@@ -175,7 +175,7 @@ impl Handler {
         let error = match error {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            StreamUpgradeError::Apply(v) => libp2p_core::util::unreachable(v),
+            StreamUpgradeError::Apply(v) => ant_libp2p_core::util::unreachable(v),
             StreamUpgradeError::NegotiationFailed => outbound::Error::Unsupported,
             StreamUpgradeError::Io(e) => outbound::Error::Io(e),
             StreamUpgradeError::Timeout => outbound::Error::Io(io::ErrorKind::TimedOut.into()),

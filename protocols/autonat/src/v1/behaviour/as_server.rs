@@ -22,12 +22,12 @@ use std::{
     num::NonZeroU8,
 };
 
-use libp2p_core::{multiaddr::Protocol, Multiaddr};
+use ant_libp2p_core::{multiaddr::Protocol, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_request_response::{
+use ant_libp2p_request_response::{
     self as request_response, InboundFailure, InboundRequestId, ResponseChannel,
 };
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     dial_opts::{DialOpts, PeerCondition},
     ConnectionId, DialError, ToSwarm,
 };

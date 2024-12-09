@@ -27,6 +27,8 @@ pub mod framed;
 mod quicksink;
 pub mod tls;
 
+use ant_libp2p_core as libp2p_core;
+
 use std::{
     io,
     pin::Pin,

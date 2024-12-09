@@ -29,7 +29,7 @@
 pub(crate) mod behaviour;
 pub(crate) mod protocol;
 
-pub use libp2p_request_response::{InboundFailure, OutboundFailure};
+pub use ant_libp2p_request_response::{InboundFailure, OutboundFailure};
 
 pub use self::{
     behaviour::{

@@ -20,10 +20,10 @@
 
 use std::io;
 
+use ant_libp2p_core::{multiaddr::Protocol, Multiaddr};
+use ant_libp2p_swarm::Stream;
 use asynchronous_codec::Framed;
 use futures::prelude::*;
-use libp2p_core::{multiaddr::Protocol, Multiaddr};
-use libp2p_swarm::Stream;
 use thiserror::Error;
 
 use crate::proto;

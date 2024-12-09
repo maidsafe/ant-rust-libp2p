@@ -6,8 +6,8 @@ use std::{
 
 use futures::StreamExt;
 use libp2p_identify as identify;
-use libp2p_swarm::{Swarm, SwarmEvent};
-use libp2p_swarm_test::SwarmExt;
+use ant_libp2p_swarm::{Swarm, SwarmEvent};
+use ant_libp2p_swarm_test::SwarmExt;
 use tracing_subscriber::EnvFilter;
 
 #[async_std::test]
@@ -39,7 +39,7 @@ async fn periodic_identify() {
 
     use identify::Event::{Received, Sent};
 
-    match libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await {
+    match ant_libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await {
         (
             [Received { info: s1_info, .. }, Sent { .. }],
             [Received { info: s2_info, .. }, Sent { .. }],
@@ -316,7 +316,7 @@ async fn identify_push() {
     swarm2.connect(&mut swarm1).await;
 
     // First, let the periodic identify do its thing.
-    let ([e1, e2], [e3, e4]) = libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await;
+    let ([e1, e2], [e3, e4]) = ant_libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await;
 
     {
         use identify::Event::{Received, Sent};
@@ -333,7 +333,7 @@ async fn identify_push() {
         .behaviour_mut()
         .push(iter::once(*swarm1.local_peer_id()));
 
-    let swarm1_received_info = match libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await {
+    let swarm1_received_info = match ant_libp2p_swarm_test::drive(&mut swarm1, &mut swarm2).await {
         ([identify::Event::Received { info, .. }], [identify::Event::Pushed { .. }]) => info,
         other => panic!("Unexpected events: {other:?}"),
     };

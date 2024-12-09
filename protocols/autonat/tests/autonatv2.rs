@@ -4,11 +4,11 @@ use libp2p_autonat::v2::{
     client::{self, Config},
     server,
 };
-use libp2p_core::{multiaddr::Protocol, transport::TransportError, Multiaddr};
-use libp2p_swarm::{
+use ant_libp2p_core::{multiaddr::Protocol, transport::TransportError, Multiaddr};
+use ant_libp2p_swarm::{
     DialError, FromSwarm, NetworkBehaviour, NewExternalAddrCandidate, Swarm, SwarmEvent,
 };
-use libp2p_swarm_test::SwarmExt;
+use ant_libp2p_swarm_test::SwarmExt;
 use rand_core::OsRng;
 use tokio::sync::oneshot;
 use tracing_subscriber::EnvFilter;
@@ -441,15 +441,15 @@ async fn new_client() -> Swarm<CombinedClient> {
     node
 }
 
-#[derive(libp2p_swarm::NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[derive(ant_libp2p_swarm::NetworkBehaviour)]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct CombinedServer {
     autonat: libp2p_autonat::v2::server::Behaviour,
     identify: libp2p_identify::Behaviour,
 }
 
-#[derive(libp2p_swarm::NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[derive(ant_libp2p_swarm::NetworkBehaviour)]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct CombinedClient {
     autonat: libp2p_autonat::v2::client::Behaviour,
     identify: libp2p_identify::Behaviour,

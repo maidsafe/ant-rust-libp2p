@@ -20,17 +20,17 @@
 
 use std::time::Duration;
 
-use libp2p_core::{
+use ant_libp2p_core::{
     multiaddr::{Multiaddr, Protocol},
     transport::{upgrade::Version, MemoryTransport, Transport},
 };
+use ant_libp2p_swarm::{Config, NetworkBehaviour, Swarm, SwarmEvent};
 use libp2p_dcutr as dcutr;
 use libp2p_identify as identify;
 use libp2p_identity as identity;
 use libp2p_identity::PeerId;
 use libp2p_plaintext as plaintext;
 use libp2p_relay as relay;
-use libp2p_swarm::{Config, NetworkBehaviour, Swarm, SwarmEvent};
 use libp2p_swarm_test::SwarmExt as _;
 use tracing_subscriber::EnvFilter;
 
@@ -121,7 +121,7 @@ fn build_relay() -> Swarm<Relay> {
 }
 
 #[derive(NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct Relay {
     relay: relay::Behaviour,
     identify: identify::Behaviour,
@@ -157,7 +157,7 @@ fn build_client() -> Swarm<Client> {
 }
 
 #[derive(NetworkBehaviour)]
-#[behaviour(prelude = "libp2p_swarm::derive_prelude")]
+#[behaviour(prelude = "ant_libp2p_swarm::derive_prelude")]
 struct Client {
     relay: relay::client::Behaviour,
     dcutr: dcutr::Behaviour,

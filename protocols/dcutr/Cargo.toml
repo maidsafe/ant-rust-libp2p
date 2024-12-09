@@ -1,12 +1,12 @@
 [package]
-name = "libp2p-dcutr"
+name = "ant-libp2p-dcutr"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Direct connection upgrade through relay"
 version = "0.12.1"
 authors = ["Max Inden <mail@max-inden.de>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
@@ -16,8 +16,8 @@ either = "1.11.0"
 futures = { workspace = true }
 futures-timer = "3.0"
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }
@@ -29,15 +29,15 @@ futures-bounded = { workspace = true }
 [dev-dependencies]
 clap = { version = "4.5.6", features = ["derive"] }
 libp2p-dns = { workspace = true, features = ["async-std"] }
-libp2p-identify = { workspace = true }
-libp2p-noise = { workspace = true }
-libp2p-ping = { workspace = true }
-libp2p-plaintext = { workspace = true }
-libp2p-relay = { workspace = true }
-libp2p-swarm = { workspace = true, features = ["macros"] }
-libp2p-swarm-test = { path = "../../swarm-test" }
-libp2p-tcp = { workspace = true, features = ["async-io"] }
-libp2p-yamux = { workspace = true }
+ant-libp2p-identify = { workspace = true }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-ping = { workspace = true }
+ant-libp2p-plaintext = { workspace = true }
+ant-libp2p-relay = { workspace = true }
+ant-libp2p-swarm = { workspace = true, features = ["macros"] }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-tcp = { workspace = true, features = ["async-io"] }
+ant-libp2p-yamux = { workspace = true }
 rand = "0.8"
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 tokio = { workspace = true, features = ["rt", "macros"] }

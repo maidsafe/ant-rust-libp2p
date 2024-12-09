@@ -54,7 +54,7 @@ use std::{
     time::Duration,
 };
 
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 pub use map_in::MapInEvent;
 pub use map_out::MapOutEvent;
 pub use one_shot::{OneShotHandler, OneShotHandlerConfig};
@@ -77,13 +77,13 @@ use crate::{connection::AsStrHashEq, StreamProtocol};
 ///   1. Dialing by initiating a new outbound substream. In order to do so,
 ///      [`ConnectionHandler::poll()`] must return an
 ///      [`ConnectionHandlerEvent::OutboundSubstreamRequest`], providing an instance of
-///      [`libp2p_core::upgrade::OutboundUpgrade`] that is used to negotiate the protocol(s). Upon
+///      [`ant_libp2p_core::upgrade::OutboundUpgrade`] that is used to negotiate the protocol(s). Upon
 ///      success, [`ConnectionHandler::on_connection_event`] is called with
 ///      [`ConnectionEvent::FullyNegotiatedOutbound`] translating the final output of the upgrade.
 ///
 ///   2. Listening by accepting a new inbound substream. When a new inbound substream is created on
 ///      a connection, [`ConnectionHandler::listen_protocol`] is called to obtain an instance of
-///      [`libp2p_core::upgrade::InboundUpgrade`] that is used to negotiate the protocol(s). Upon
+///      [`ant_libp2p_core::upgrade::InboundUpgrade`] that is used to negotiate the protocol(s). Upon
 ///      success, [`ConnectionHandler::on_connection_event`] is called with
 ///      [`ConnectionEvent::FullyNegotiatedInbound`] translating the final output of the upgrade.
 ///
@@ -116,7 +116,7 @@ pub trait ConnectionHandler: Send + 'static {
     /// The type of additional information passed to an `OutboundSubstreamRequest`.
     type OutboundOpenInfo: Send + 'static;
 
-    /// The [`InboundUpgrade`](libp2p_core::upgrade::InboundUpgrade) to apply on inbound
+    /// The [`InboundUpgrade`](ant_libp2p_core::upgrade::InboundUpgrade) to apply on inbound
     /// substreams to negotiate the desired protocols.
     ///
     /// > **Note**: The returned `InboundUpgrade` should always accept all the generally

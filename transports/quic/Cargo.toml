@@ -1,11 +1,11 @@
 [package]
-name = "libp2p-quic"
+name = "ant-libp2p-quic"
 version = "0.11.2"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 rust-version = { workspace = true }
 description = "TLS based QUIC transport implementation for libp2p"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 license = "MIT"
 
 [dependencies]
@@ -14,7 +14,7 @@ bytes = "1.6.0"
 futures = { workspace = true }
 futures-timer = "3.0.3"
 if-watch = "3.2.0"
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-tls = { workspace = true }
 libp2p-identity = { workspace = true }
 parking_lot = "0.12.3"
@@ -40,9 +40,9 @@ all-features = true
 async-std = { version = "1.12.0", features = ["attributes"] }
 libp2p-identity = { workspace = true, features = ["rand"] }
 libp2p-muxer-test-harness = { path = "../../muxers/test-harness" }
-libp2p-noise = { workspace = true }
-libp2p-tcp = { workspace = true, features = ["async-io"] }
-libp2p-yamux = { workspace = true }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-tcp = { workspace = true, features = ["async-io"] }
+ant-libp2p-yamux = { workspace = true }
 quickcheck = "1"
 tokio = { workspace = true, features = ["macros", "rt-multi-thread", "time"] }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }

@@ -68,12 +68,12 @@ use std::{
     task::{Context, Poll, Waker},
 };
 
-use libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
-use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_swarm::{
     dummy, CloseConnection, ConnectionDenied, ConnectionId, FromSwarm, NetworkBehaviour, THandler,
     THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
+use libp2p_identity::PeerId;
 
 /// A [`NetworkBehaviour`] that can act as an allow or block list.
 #[derive(Default, Debug)]
@@ -279,7 +279,7 @@ where
     ) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(event)
+        ant_libp2p_core::util::unreachable(event)
     }
 
     fn poll(

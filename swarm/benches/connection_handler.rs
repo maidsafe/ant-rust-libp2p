@@ -2,7 +2,7 @@ use std::{convert::Infallible, sync::atomic::AtomicUsize};
 
 use async_std::stream::StreamExt;
 use criterion::{criterion_group, criterion_main, Criterion};
-use libp2p_core::{
+use ant_libp2p_core::{
     transport::MemoryTransport, InboundUpgrade, Multiaddr, OutboundUpgrade, Transport, UpgradeInfo,
 };
 use libp2p_identity::PeerId;
@@ -209,8 +209,8 @@ impl NetworkBehaviour for SpinningBehaviour {
         &mut self,
         _connection_id: libp2p_swarm::ConnectionId,
         _peer: libp2p_identity::PeerId,
-        _local_addr: &libp2p_core::Multiaddr,
-        _remote_addr: &libp2p_core::Multiaddr,
+        _local_addr: &ant_libp2p_core::Multiaddr,
+        _remote_addr: &ant_libp2p_core::Multiaddr,
     ) -> Result<libp2p_swarm::THandler<Self>, libp2p_swarm::ConnectionDenied> {
         Ok(SpinningHandler {
             iter_count: 0,
@@ -222,9 +222,9 @@ impl NetworkBehaviour for SpinningBehaviour {
         &mut self,
         _connection_id: libp2p_swarm::ConnectionId,
         _peer: libp2p_identity::PeerId,
-        _addr: &libp2p_core::Multiaddr,
-        _role_override: libp2p_core::Endpoint,
-        _port_use: libp2p_core::transport::PortUse,
+        _addr: &ant_libp2p_core::Multiaddr,
+        _role_override: ant_libp2p_core::Endpoint,
+        _port_use: ant_libp2p_core::transport::PortUse,
     ) -> Result<libp2p_swarm::THandler<Self>, libp2p_swarm::ConnectionDenied> {
         Ok(SpinningHandler {
             iter_count: self.iter_count,

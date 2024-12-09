@@ -23,7 +23,7 @@ use std::{
     task::{Context, Poll},
 };
 
-use libp2p_core::{
+use ant_libp2p_core::{
     multiaddr::Multiaddr,
     transport::{ListenerId, PortUse},
     ConnectedPoint, Endpoint,

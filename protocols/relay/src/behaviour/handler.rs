@@ -25,6 +25,12 @@ use std::{
     time::Duration,
 };
 
+use ant_libp2p_core::{upgrade::ReadyUpgrade, ConnectedPoint, Multiaddr};
+use ant_libp2p_swarm::{
+    handler::{ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound},
+    ConnectionHandler, ConnectionHandlerEvent, ConnectionId, Stream, StreamProtocol,
+    StreamUpgradeError, SubstreamProtocol,
+};
 use bytes::Bytes;
 use either::Either;
 use futures::{
@@ -33,13 +39,7 @@ use futures::{
     stream::{FuturesUnordered, StreamExt},
 };
 use futures_timer::Delay;
-use libp2p_core::{upgrade::ReadyUpgrade, ConnectedPoint, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_swarm::{
-    handler::{ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound},
-    ConnectionHandler, ConnectionHandlerEvent, ConnectionId, Stream, StreamProtocol,
-    StreamUpgradeError, SubstreamProtocol,
-};
 use web_time::Instant;
 
 use crate::{
@@ -457,7 +457,7 @@ impl Handler {
             StreamUpgradeError::Io(e) => outbound_stop::Error::Io(e),
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            StreamUpgradeError::Apply(v) => libp2p_core::util::unreachable(v),
+            StreamUpgradeError::Apply(v) => ant_libp2p_core::util::unreachable(v),
         };
 
         let stop_command = self

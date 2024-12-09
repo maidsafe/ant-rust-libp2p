@@ -1,4 +1,4 @@
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 
 use crate::ListenerId;
 

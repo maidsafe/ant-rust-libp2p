@@ -20,11 +20,11 @@
 
 use std::{io, time::Duration};
 
+use ant_libp2p_swarm::Stream;
 use asynchronous_codec::{Framed, FramedParts};
 use bytes::Bytes;
 use futures::prelude::*;
 use libp2p_identity::PeerId;
-use libp2p_swarm::Stream;
 use thiserror::Error;
 
 use crate::{proto, protocol::MAX_MESSAGE_SIZE, STOP_PROTOCOL_NAME};

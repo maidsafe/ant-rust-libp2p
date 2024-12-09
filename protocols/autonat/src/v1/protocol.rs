@@ -26,10 +26,10 @@ use futures::{
     io::{AsyncRead, AsyncWrite},
     SinkExt, StreamExt,
 };
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 use libp2p_identity::PeerId;
-use libp2p_request_response::{self as request_response};
-use libp2p_swarm::StreamProtocol;
+use ant_libp2p_request_response::{self as request_response};
+use ant_libp2p_swarm::StreamProtocol;
 
 use crate::proto;
 

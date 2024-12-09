@@ -1,6 +1,6 @@
 use std::num::NonZeroUsize;
 
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 use libp2p_identity::PeerId;
 use lru::LruCache;
 
@@ -97,7 +97,7 @@ impl Default for PeerAddresses {
 mod tests {
     use std::io;
 
-    use libp2p_core::{
+    use ant_libp2p_core::{
         multiaddr::Protocol,
         transport::{memory::MemoryTransportError, TransportError},
     };

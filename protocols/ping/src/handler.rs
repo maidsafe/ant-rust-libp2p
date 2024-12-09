@@ -27,17 +27,17 @@ use std::{
     time::Duration,
 };
 
+use ant_libp2p_core::upgrade::ReadyUpgrade;
+use ant_libp2p_swarm::{
+    handler::{ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound},
+    ConnectionHandler, ConnectionHandlerEvent, Stream, StreamProtocol, StreamUpgradeError,
+    SubstreamProtocol,
+};
 use futures::{
     future::{BoxFuture, Either},
     prelude::*,
 };
 use futures_timer::Delay;
-use libp2p_core::upgrade::ReadyUpgrade;
-use libp2p_swarm::{
-    handler::{ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound},
-    ConnectionHandler, ConnectionHandlerEvent, Stream, StreamProtocol, StreamUpgradeError,
-    SubstreamProtocol,
-};
 
 use crate::{protocol, PROTOCOL_NAME};
 
@@ -213,7 +213,7 @@ impl Handler {
             },
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            StreamUpgradeError::Apply(e) => libp2p_core::util::unreachable(e),
+            StreamUpgradeError::Apply(e) => ant_libp2p_core::util::unreachable(e),
             StreamUpgradeError::Io(e) => Failure::Other { error: Box::new(e) },
         };
 

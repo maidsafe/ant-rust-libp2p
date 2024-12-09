@@ -224,7 +224,7 @@ mod tests {
     use std::convert::Infallible;
 
     use futures::{executor::block_on, future::poll_fn};
-    use libp2p_core::upgrade::DeniedUpgrade;
+    use ant_libp2p_core::upgrade::DeniedUpgrade;
 
     use super::*;
 

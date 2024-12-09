@@ -18,7 +18,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-use libp2p_core::{multiaddr::Protocol, Multiaddr};
+use ant_libp2p_core::{multiaddr::Protocol, Multiaddr};
 
 /// Perform IP address translation.
 ///

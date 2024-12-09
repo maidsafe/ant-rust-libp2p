@@ -1,5 +1,5 @@
 [package]
-name = "libp2p-websocket"
+name = "ant-libp2p-websocket"
 edition = "2021"
 rust-version = { workspace = true }
 description = "WebSocket transport for libp2p"
@@ -14,7 +14,7 @@ categories = ["network-programming", "asynchronous"]
 futures-rustls = { workspace = true, features = ["ring"] }
 either = "1.12.0"
 futures = { workspace = true }
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true }
 parking_lot = "0.12.3"
 pin-project-lite = "0.2.14"
@@ -26,7 +26,7 @@ url = "2.5"
 webpki-roots = "0.25"
 
 [dev-dependencies]
-libp2p-tcp = { workspace = true, features = ["async-io"] }
+ant-libp2p-tcp = { workspace = true, features = ["async-io"] }
 libp2p-dns = { workspace = true, features = ["async-std"] }
 libp2p-identity = { workspace = true, features = ["rand"] }
 async-std = { version = "1.6.5", features = ["attributes"] }

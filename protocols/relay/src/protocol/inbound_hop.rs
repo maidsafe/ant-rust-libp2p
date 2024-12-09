@@ -20,13 +20,13 @@
 
 use std::time::Duration;
 
+use ant_libp2p_core::Multiaddr;
+use ant_libp2p_swarm::Stream;
 use asynchronous_codec::{Framed, FramedParts};
 use bytes::Bytes;
 use either::Either;
 use futures::prelude::*;
-use libp2p_core::Multiaddr;
 use libp2p_identity::PeerId;
-use libp2p_swarm::Stream;
 use thiserror::Error;
 use web_time::SystemTime;
 

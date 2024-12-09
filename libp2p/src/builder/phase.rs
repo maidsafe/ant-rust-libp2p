@@ -1,5 +1,7 @@
 #![allow(unused_imports)]
 
+use ant_libp2p_core as libp2p_core;
+
 mod bandwidth_logging;
 mod bandwidth_metrics;
 mod behaviour;

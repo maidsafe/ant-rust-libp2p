@@ -62,12 +62,12 @@ mod protocol;
 
 use std::{collections::HashSet, fmt::Write, pin::Pin};
 
-use futures::prelude::*;
-pub use io::Output;
-use libp2p_core::{
+use ant_libp2p_core::{
     upgrade::{InboundConnectionUpgrade, OutboundConnectionUpgrade},
     UpgradeInfo,
 };
+use futures::prelude::*;
+pub use io::Output;
 use libp2p_identity as identity;
 use libp2p_identity::PeerId;
 use multiaddr::Protocol;

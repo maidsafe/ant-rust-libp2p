@@ -24,6 +24,8 @@
 
 mod web_context;
 
+use ant_libp2p_core as libp2p_core;
+
 use std::{
     cmp::min,
     pin::Pin,

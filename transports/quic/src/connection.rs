@@ -21,6 +21,8 @@
 mod connecting;
 mod stream;
 
+use ant_libp2p_core as libp2p_core;
+
 use std::{
     pin::Pin,
     task::{Context, Poll},

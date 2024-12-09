@@ -31,16 +31,16 @@ use std::{
     time::Duration,
 };
 
-use futures::{
-    channel::{mpsc, oneshot},
-    prelude::*,
-};
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     handler::{
         ConnectionEvent, ConnectionHandler, ConnectionHandlerEvent, DialUpgradeError,
         FullyNegotiatedInbound, FullyNegotiatedOutbound, ListenUpgradeError, StreamUpgradeError,
     },
     SubstreamProtocol,
+};
+use futures::{
+    channel::{mpsc, oneshot},
+    prelude::*,
 };
 pub use protocol::ProtocolSupport;
 use smallvec::SmallVec;
@@ -244,7 +244,7 @@ where
             }
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            StreamUpgradeError::Apply(e) => libp2p_core::util::unreachable(e),
+            StreamUpgradeError::Apply(e) => ant_libp2p_core::util::unreachable(e),
             StreamUpgradeError::Io(e) => {
                 self.pending_events.push_back(Event::OutboundStreamFailed {
                     request_id: message.request_id,
@@ -262,7 +262,7 @@ where
     ) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(error)
+        ant_libp2p_core::util::unreachable(error)
     }
 }
 

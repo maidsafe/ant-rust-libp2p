@@ -11,25 +11,25 @@ keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
 [features]
-dcutr = ["libp2p-dcutr"]
-gossipsub = ["libp2p-gossipsub"]
-identify = ["libp2p-identify"]
-kad = ["libp2p-kad"]
-ping = ["libp2p-ping"]
-relay = ["libp2p-relay"]
+dcutr = ["ant-libp2p-dcutr"]
+gossipsub = ["ant-libp2p-gossipsub"]
+identify = ["ant-libp2p-identify"]
+kad = ["ant-libp2p-kad"]
+ping = ["ant-libp2p-ping"]
+relay = ["ant-libp2p-relay"]
 
 [dependencies]
 futures = { workspace = true }
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-dcutr =  { workspace = true, optional = true }
-libp2p-gossipsub =  { workspace = true, optional = true }
-libp2p-identify = { workspace = true, optional = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-dcutr =  { workspace = true, optional = true }
+ant-libp2p-gossipsub =  { workspace = true, optional = true }
+ant-libp2p-identify = { workspace = true, optional = true }
 libp2p-identity = { workspace = true }
-libp2p-kad = { workspace = true, optional = true }
-libp2p-ping = { workspace = true, optional = true }
-libp2p-relay =  { workspace = true, optional = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-kad = { workspace = true, optional = true }
+ant-libp2p-ping = { workspace = true, optional = true }
+ant-libp2p-relay =  { workspace = true, optional = true }
+ant-libp2p-swarm = { workspace = true }
 pin-project = "1.1.5"
 prometheus-client = { workspace = true }
 

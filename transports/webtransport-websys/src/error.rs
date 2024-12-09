@@ -1,3 +1,5 @@
+use ant_libp2p_noise as libp2p_noise;
+
 use wasm_bindgen::{JsCast, JsValue};
 
 /// Errors that may happen on the [`Transport`](crate::Transport) or the

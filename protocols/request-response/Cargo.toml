@@ -1,12 +1,12 @@
 [package]
-name = "libp2p-request-response"
+name = "ant-libp2p-request-response"
 edition = "2021"
 rust-version = { workspace = true }
 description = "Generic Request/Response Protocols"
 version = "0.27.1"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
@@ -15,8 +15,8 @@ async-trait = "0.1"
 cbor4ii = { version = "0.3.2", features = ["serde1", "use_std"], optional = true }
 futures = { workspace = true }
 web-time = { workspace = true }
-libp2p-core = { workspace = true }
-libp2p-swarm = { workspace = true }
+ant-libp2p-core = { workspace = true }
+ant-libp2p-swarm = { workspace = true }
 libp2p-identity = { workspace = true }
 rand = "0.8"
 serde = { version = "1.0", optional = true}
@@ -27,17 +27,17 @@ futures-timer = "3.0.3"
 futures-bounded = { workspace = true }
 
 [features]
-json = ["dep:serde", "dep:serde_json", "libp2p-swarm/macros"]
-cbor = ["dep:serde", "dep:cbor4ii", "libp2p-swarm/macros"]
+json = ["dep:serde", "dep:serde_json", "ant-libp2p-swarm/macros"]
+cbor = ["dep:serde", "dep:cbor4ii", "ant-libp2p-swarm/macros"]
 
 [dev-dependencies]
 anyhow = "1.0.86"
 async-std = { version = "1.6.2", features = ["attributes"] }
-libp2p-noise = { workspace = true }
-libp2p-tcp = { workspace = true, features = ["async-io"] }
-libp2p-yamux = { workspace = true }
+ant-libp2p-noise = { workspace = true }
+ant-libp2p-tcp = { workspace = true, features = ["async-io"] }
+ant-libp2p-yamux = { workspace = true }
 rand = "0.8"
-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
 futures_ringbuf = "0.4.0"
 serde = { version = "1.0", features = ["derive"] }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }

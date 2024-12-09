@@ -17,15 +17,15 @@ futures = { workspace = true }
 futures-bounded = { workspace = true }
 futures-timer = "3.0"
 web-time = { workspace = true }
-libp2p = { workspace = true, features = ["tokio", "tcp", "quic", "tls", "yamux", "dns"] }
-libp2p-core = { workspace = true }
+ant-libp2p = { workspace = true, features = ["tokio", "tcp", "quic", "tls", "yamux", "dns"] }
+ant-libp2p-core = { workspace = true }
 libp2p-dns = { workspace = true, features = ["tokio"] }
 libp2p-identity = { workspace = true, features = ["rand"] }
-libp2p-quic = { workspace = true, features = ["tokio"] }
-libp2p-swarm = { workspace = true, features = ["macros", "tokio"] }
-libp2p-tcp = { workspace = true, features = ["tokio"] }
+ant-libp2p-quic = { workspace = true, features = ["tokio"] }
+ant-libp2p-swarm = { workspace = true, features = ["macros", "tokio"] }
+ant-libp2p-tcp = { workspace = true, features = ["tokio"] }
 libp2p-tls = { workspace = true }
-libp2p-yamux = { workspace = true }
+ant-libp2p-yamux = { workspace = true }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 thiserror = { workspace = true }
@@ -35,7 +35,7 @@ tokio = { workspace = true, features = ["macros", "rt", "rt-multi-thread"] }
 
 [dev-dependencies]
 rand = "0.8"
-libp2p-swarm-test = { path = "../../swarm-test" }
+ant-libp2p-swarm-test = { path = "../../swarm-test" }
 
 # Passing arguments to the docsrs builder in order to properly document cfg's.
 # More information: https://docs.rs/about/builds#cross-compiling

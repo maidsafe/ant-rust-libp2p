@@ -27,17 +27,17 @@ use std::{
     task::{Context, Poll},
 };
 
-use either::Either;
-use libp2p_core::{
+use ant_libp2p_core::{
     connection::ConnectedPoint, multiaddr::Protocol, transport::PortUse, Endpoint, Multiaddr,
 };
-use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     behaviour::{ConnectionClosed, DialFailure, FromSwarm},
     dial_opts::{self, DialOpts},
     dummy, ConnectionDenied, ConnectionHandler, ConnectionId, NetworkBehaviour,
     NewExternalAddrCandidate, NotifyHandler, THandler, THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
+use either::Either;
+use libp2p_identity::PeerId;
 use lru::LruCache;
 use thiserror::Error;
 
@@ -321,7 +321,7 @@ impl NetworkBehaviour for Behaviour {
             }
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            Either::Right(never) => libp2p_core::util::unreachable(never),
+            Either::Right(never) => ant_libp2p_core::util::unreachable(never),
         };
     }
 

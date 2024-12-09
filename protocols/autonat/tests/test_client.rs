@@ -23,10 +23,10 @@ use std::time::Duration;
 use libp2p_autonat::{
     Behaviour, Config, Event, NatStatus, OutboundProbeError, OutboundProbeEvent, ResponseError,
 };
-use libp2p_core::Multiaddr;
+use ant_libp2p_core::Multiaddr;
 use libp2p_identity::PeerId;
-use libp2p_swarm::{Swarm, SwarmEvent};
-use libp2p_swarm_test::SwarmExt as _;
+use ant_libp2p_swarm::{Swarm, SwarmEvent};
+use ant_libp2p_swarm_test::SwarmExt as _;
 use tokio::task::JoinHandle;
 
 const MAX_CONFIDENCE: usize = 3;

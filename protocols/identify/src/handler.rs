@@ -28,12 +28,12 @@ use either::Either;
 use futures::prelude::*;
 use futures_bounded::Timeout;
 use futures_timer::Delay;
-use libp2p_core::{
+use ant_libp2p_core::{
     upgrade::{ReadyUpgrade, SelectUpgrade},
     Multiaddr,
 };
 use libp2p_identity::{PeerId, PublicKey};
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     handler::{
         ConnectionEvent, DialUpgradeError, FullyNegotiatedInbound, FullyNegotiatedOutbound,
         ProtocolSupport,
@@ -407,7 +407,7 @@ impl ConnectionHandler for Handler {
             ConnectionEvent::DialUpgradeError(DialUpgradeError { error, .. }) => {
                 self.events.push(ConnectionHandlerEvent::NotifyBehaviour(
                     Event::IdentificationError(
-                        error.map_upgrade_err(|e| libp2p_core::util::unreachable(e.into_inner())),
+                        error.map_upgrade_err(|e| ant_libp2p_core::util::unreachable(e.into_inner())),
                     ),
                 ));
                 self.trigger_next_identify.reset(self.interval);

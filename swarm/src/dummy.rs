@@ -3,7 +3,7 @@ use std::{
     task::{Context, Poll},
 };
 
-use libp2p_core::{transport::PortUse, upgrade::DeniedUpgrade, Endpoint, Multiaddr};
+use ant_libp2p_core::{transport::PortUse, upgrade::DeniedUpgrade, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
 
 use crate::{
@@ -50,7 +50,7 @@ impl NetworkBehaviour for Behaviour {
     ) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(event)
+        ant_libp2p_core::util::unreachable(event)
     }
 
     fn poll(&mut self, _: &mut Context<'_>) -> Poll<ToSwarm<Self::ToSwarm, THandlerInEvent<Self>>> {
@@ -80,7 +80,7 @@ impl crate::handler::ConnectionHandler for ConnectionHandler {
     fn on_behaviour_event(&mut self, event: Self::FromBehaviour) {
         // TODO: remove when Rust 1.82 is MSRV
         #[allow(unreachable_patterns)]
-        libp2p_core::util::unreachable(event)
+        ant_libp2p_core::util::unreachable(event)
     }
 
     fn poll(
@@ -106,19 +106,19 @@ impl crate::handler::ConnectionHandler for ConnectionHandler {
             #[allow(unreachable_patterns)]
             ConnectionEvent::FullyNegotiatedInbound(FullyNegotiatedInbound {
                 protocol, ..
-            }) => libp2p_core::util::unreachable(protocol),
+            }) => ant_libp2p_core::util::unreachable(protocol),
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
             ConnectionEvent::FullyNegotiatedOutbound(FullyNegotiatedOutbound {
                 protocol, ..
-            }) => libp2p_core::util::unreachable(protocol),
+            }) => ant_libp2p_core::util::unreachable(protocol),
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
             ConnectionEvent::DialUpgradeError(DialUpgradeError { info: _, error }) => match error {
                 // TODO: remove when Rust 1.82 is MSRV
                 #[allow(unreachable_patterns)]
                 StreamUpgradeError::Timeout => unreachable!(),
-                StreamUpgradeError::Apply(e) => libp2p_core::util::unreachable(e),
+                StreamUpgradeError::Apply(e) => ant_libp2p_core::util::unreachable(e),
                 StreamUpgradeError::NegotiationFailed | StreamUpgradeError::Io(_) => {
                     unreachable!("Denied upgrade does not support any protocols")
                 }

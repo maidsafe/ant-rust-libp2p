@@ -15,9 +15,9 @@ asynchronous-codec = { workspace = true }
 bytes = "1"
 futures = { workspace = true }
 hex = "0.4"
-libp2p-core = { workspace = true }
+ant-libp2p-core = { workspace = true }
 libp2p-identity = { workspace = true }
-libp2p-noise = { workspace = true }
+ant-libp2p-noise = { workspace = true }
 quick-protobuf = "0.8"
 quick-protobuf-codec = { workspace = true }
 rand = "0.8"

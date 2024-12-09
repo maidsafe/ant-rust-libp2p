@@ -20,6 +20,8 @@
 
 //! Records and record storage abstraction of the libp2p Kademlia DHT.
 
+use ant_libp2p_core as libp2p_core;
+
 pub mod store;
 
 use std::{

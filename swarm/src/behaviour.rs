@@ -24,6 +24,8 @@ mod listen_addresses;
 mod peer_addresses;
 pub mod toggle;
 
+use ant_libp2p_core as libp2p_core;
+
 use std::task::{Context, Poll};
 
 pub use external_addresses::ExternalAddresses;
@@ -43,7 +45,7 @@ use crate::{
 
 /// A [`NetworkBehaviour`] defines the behaviour of the local node on the network.
 ///
-/// In contrast to [`Transport`](libp2p_core::Transport) which defines **how** to send bytes on the
+/// In contrast to [`Transport`](ant_libp2p_core::Transport) which defines **how** to send bytes on the
 /// network, [`NetworkBehaviour`] defines **what** bytes to send and **to whom**.
 ///
 /// Each protocol (e.g. `libp2p-ping`, `libp2p-identify` or `libp2p-kad`) implements

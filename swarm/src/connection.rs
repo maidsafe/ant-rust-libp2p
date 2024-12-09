@@ -41,7 +41,7 @@ pub(crate) use error::{
 };
 use futures::{future::BoxFuture, stream, stream::FuturesUnordered, FutureExt, StreamExt};
 use futures_timer::Delay;
-use libp2p_core::{
+use ant_libp2p_core::{
     connection::ConnectedPoint,
     multiaddr::Multiaddr,
     muxing::{StreamMuxerBox, StreamMuxerEvent, StreamMuxerExt, SubstreamBox},
@@ -792,7 +792,7 @@ mod tests {
     };
 
     use futures::{future, AsyncRead, AsyncWrite};
-    use libp2p_core::{
+    use ant_libp2p_core::{
         upgrade::{DeniedUpgrade, InboundUpgrade, OutboundUpgrade, UpgradeInfo},
         StreamMuxer,
     };
@@ -1217,13 +1217,13 @@ mod tests {
                 ConnectionEvent::FullyNegotiatedInbound(FullyNegotiatedInbound {
                     protocol,
                     ..
-                }) => libp2p_core::util::unreachable(protocol),
+                }) => ant_libp2p_core::util::unreachable(protocol),
                 // TODO: remove when Rust 1.82 is MSRV
                 #[allow(unreachable_patterns)]
                 ConnectionEvent::FullyNegotiatedOutbound(FullyNegotiatedOutbound {
                     protocol,
                     ..
-                }) => libp2p_core::util::unreachable(protocol),
+                }) => ant_libp2p_core::util::unreachable(protocol),
                 ConnectionEvent::DialUpgradeError(DialUpgradeError { error, .. }) => {
                     self.error = Some(error)
                 }
@@ -1239,7 +1239,7 @@ mod tests {
         fn on_behaviour_event(&mut self, event: Self::FromBehaviour) {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            libp2p_core::util::unreachable(event)
+            ant_libp2p_core::util::unreachable(event)
         }
 
         fn connection_keep_alive(&self) -> bool {
@@ -1316,7 +1316,7 @@ mod tests {
         fn on_behaviour_event(&mut self, event: Self::FromBehaviour) {
             // TODO: remove when Rust 1.82 is MSRV
             #[allow(unreachable_patterns)]
-            libp2p_core::util::unreachable(event)
+            ant_libp2p_core::util::unreachable(event)
         }
 
         fn connection_keep_alive(&self) -> bool {

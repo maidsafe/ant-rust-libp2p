@@ -18,7 +18,7 @@
 //!
 //! The two can be used together.
 
-use libp2p_swarm::StreamProtocol;
+use ant_libp2p_swarm::StreamProtocol;
 
 pub mod client;
 pub(crate) mod protocol;

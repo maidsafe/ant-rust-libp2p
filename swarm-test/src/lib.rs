@@ -18,6 +18,12 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+use ant_libp2p_core as libp2p_core;
+use ant_libp2p_plaintext as libp2p_plaintext;
+use ant_libp2p_swarm as libp2p_swarm;
+use ant_libp2p_tcp as libp2p_tcp;
+use ant_libp2p_yamux as libp2p_yamux;
+
 use std::{fmt::Debug, future::IntoFuture, time::Duration};
 
 use async_trait::async_trait;

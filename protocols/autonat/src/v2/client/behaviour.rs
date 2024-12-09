@@ -8,9 +8,9 @@ use std::{
 use either::Either;
 use futures::FutureExt;
 use futures_timer::Delay;
-use libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
+use ant_libp2p_core::{transport::PortUse, Endpoint, Multiaddr};
 use libp2p_identity::PeerId;
-use libp2p_swarm::{
+use ant_libp2p_swarm::{
     behaviour::ConnectionEstablished, ConnectionClosed, ConnectionDenied, ConnectionHandler,
     ConnectionId, FromSwarm, NetworkBehaviour, NewExternalAddrCandidate, NotifyHandler, ToSwarm,
 };

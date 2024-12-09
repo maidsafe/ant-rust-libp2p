@@ -22,6 +22,8 @@ mod peers;
 
 use std::{num::NonZeroUsize, time::Duration};
 
+use ant_libp2p_core as libp2p_core;
+
 use either::Either;
 use fnv::FnvHashMap;
 use libp2p_core::Multiaddr;
