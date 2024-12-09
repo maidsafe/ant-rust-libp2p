@@ -1,5 +1,11 @@
 # Central repository for work on libp2p
 
+This is a fork of the main [libp2p](https://github.com/libp2p/rust-libp2p) repository. It is being
+used because there is a commit in the `master` branch we need immediate access to; it may be a long
+time before it is published in the upstream repo.
+
+When a new crate is published by the upstream owner, we will likely discard this repository.
+
 <a href="http://libp2p.io/"><img src="https://img.shields.io/badge/project-libp2p-yellow.svg?style=flat-square" /></a>
 [![dependency status](https://deps.rs/repo/github/libp2p/rust-libp2p/status.svg?style=flat-square)](https://deps.rs/repo/github/libp2p/rust-libp2p)
 [![Crates.io](https://img.shields.io/crates/v/libp2p.svg)](https://crates.io/crates/libp2p)

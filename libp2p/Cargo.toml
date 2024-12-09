@@ -2,11 +2,11 @@
 name = "libp2p"
 edition = "2021"
 rust-version = { workspace = true }
-description = "Peer-to-peer networking library"
-version = "0.54.2"
+description = "Customised version of the main rust-libp2p crate"
+version = "0.54.3"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT"
-repository = "https://github.com/libp2p/rust-libp2p"
+repository = "https://github.com/maidsafe/ant-rust-libp2p"
 keywords = ["peer-to-peer", "libp2p", "networking"]
 categories = ["network-programming", "asynchronous"]
 
